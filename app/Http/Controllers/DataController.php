@@ -6,11 +6,50 @@ use Illuminate\Http\Request;
 
 class DataController extends Controller
 {
-    public function proses(Request $request){
-        $name = $request->input('nama');
-        $lokasi = $request->input('lokasi');
-        $tinggi = $request->input('tinggi');
+    public function form()
+    {
+        return view('form');
+    }
 
-        return view('hasil', compact('name', 'lokasi', 'tinggi'));
+    public function store(Request $request)
+    {
+        $data = [
+            'nama' => $request->input('nama'),
+            'lokasi' => $request->input('lokasi'),
+            'tinggi' => $request->input('tinggi')
+        ];
+        
+        return view('konfirmasi', [
+            'name' => $data['nama'],
+            'lokasi' => $data['lokasi'],
+            'tinggi' => $data['tinggi']
+        ]);
+    }
+
+    public function konfirmasi()
+    {
+        return view('konfirmasi');
+    }
+
+    public function index()
+    {
+        $laporan = [
+            [
+                'nama' => 'Andi',
+                'lokasi' => 'Jl. Merdeka',
+                'tinggi' => 20
+            ],
+            [
+                'nama' => 'Budi',
+                'lokasi' => 'Jl. Sudirman',
+                'tinggi' => 50
+            ],
+            [
+                'nama' => 'Citra',
+                'lokasi' => 'Jl. Asia Afrika',
+                'tinggi' => 85
+            ]
+        ];
+        return view('laporan', compact('laporan'));
     }
 }
