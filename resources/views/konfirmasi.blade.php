@@ -16,6 +16,7 @@
                     <p class="text-muted">Nama Pelapor: {{ $name}}</p>
                     <p class="text-muted">Lokasi: {{ $lokasi }}</p>
                     <p class="text-muted">Tinggi Genangan: {{ $tinggi }}</p>
+                    <p class="text-muted">Tanggal Kejadian: {{ $tanggal_kejadian }}</p>
 
                     <p class="text-muted">Terima kasih telah melaporkan kondisi genangan.</p>
 

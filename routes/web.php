@@ -1,16 +1,16 @@
 <?php
 
-use App\Http\Controllers\DataController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [DataController::class, 'form'])
+Route::get('/', [LaporanController::class, 'form'])
     ->name('laporan.form');
 
-Route::post('/laporan', [DataController::class, 'store'])
+Route::post('/laporan', [LaporanController::class, 'store'])
     ->name('laporan.store');
 
-Route::get('/konfirmasi', [DataController::class, 'konfirmasi'])
+Route::get('/konfirmasi', [LaporanController::class, 'konfirmasi'])
     ->name('laporan.konfirmasi');
 
-Route::get('/laporan', [DataController::class, 'index'])
+Route::get('/laporan', [LaporanController::class, 'index'])
     ->name('laporan.index');

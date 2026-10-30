@@ -7,22 +7,22 @@
 
         <p class="mb-2">
             <strong>Pelapor:</strong>
-            {{ $laporan['nama'] }}
+            {{ $laporan['nama_pelapor'] }}
         </p>
 
         <p class="mb-2">
             <strong>Tinggi Genangan:</strong>
-            {{ $laporan['tinggi'] }} cm
+            {{ $laporan['tinggi_genangan'] }} cm
         </p>
 
         <p class="mb-2">
             <strong>Status:</strong>
 
-            @if ($laporan['tinggi'] < 30)
+            @if ($laporan['tinggi_genangan'] < 30)
                 <span class="badge text-bg-warning">
                     Waspada
                 </span>
-            @elseif ($laporan['tinggi'] <= 70)
+            @elseif ($laporan['tinggi_genangan'] <= 70)
                 <span class="badge text-bg-info">
                     Siaga
                 </span>
@@ -32,13 +32,5 @@
                 </span>
             @endif
         </p>
-
-        @if (!empty($laporan['keterangan']))
-            <p class="mb-0">
-                <strong>Keterangan:</strong>
-                {{ $laporan['keterangan'] }}
-            </p>
-        @endif
-
     </div>
 </div>

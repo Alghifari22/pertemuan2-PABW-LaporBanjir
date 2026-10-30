@@ -11,9 +11,8 @@
             <form action="{{ route('laporan.store') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="nama" class="form-label">Nama Pelapor</label>
-                    <input type="text" class="form-control" id="nama" name="nama">
-
+                    <label for="nama_pelapor" class="form-label">Nama Pelapor</label>
+                    <input type="text" class="form-control" id="nama_pelapor" name="nama_pelapor">
                 </div>
 
                 <div class="mb-3">
@@ -22,8 +21,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="tinggi" class="form-label">Tinggi Genangan Air</label>
-                    <input type="number" class="form-control" id="tinggi" name="tinggi">
+                    <label for="tinggi_genangan" class="form-label">Tinggi Genangan Air</label>
+                    <input type="number" class="form-control" id="tinggi_genangan" name="tinggi_genangan">
+                </div>
+
+                <div class="mb-3">
+                    <label for="tanggal_kejadian" class="form-label">Tanggal Kejadian</label>
+                    <input type="date" class="form-control" id="tanggal_kejadian" name="tanggal_kejadian">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Kirim Laporan</button>
